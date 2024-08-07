@@ -57,7 +57,7 @@ const Layout = () => {
                                     className={({ isActive }) => (isActive ? styles.headerNavPageLinkActive : styles.headerNavPageLink)}
                                     onClick={() => setMenuOpen(false)}
                                 >
-                                    Ask ETHEL
+                                    Grading
                                 </NavLink>
                             </li>
                         </ul>

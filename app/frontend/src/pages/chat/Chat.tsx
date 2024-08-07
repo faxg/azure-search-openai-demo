@@ -358,7 +358,7 @@ const Chat = () => {
                                 aria-hidden="true"
                                 aria-label="Chat logo"
                             />
-                            <Image src="/eth_logo.png" />
+
                             <h1 className={styles.chatEmptyStateTitle}>Chat with your Lecture</h1>
                             <h2 className={styles.chatEmptyStateSubtitle}>Ask me anything about this lecture, or try an example. </h2>
                             <span>Keep in mind that I'm just an AI, so I make mistakes sometimes.</span>
@@ -433,7 +433,7 @@ const Chat = () => {
                     <div className={styles.chatInput}>
                         <QuestionInput
                             clearOnSend
-                            placeholder="Type a new question (e.g. what are the key takeaways from this lecture?)"
+                            placeholder="Type a new question (e.g. what's the key takeaway from this lecture?)"
                             disabled={isLoading}
                             onSend={question => makeApiRequest(question)}
                             showSpeechInput={showSpeechInput}

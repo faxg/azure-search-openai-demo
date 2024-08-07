@@ -248,11 +248,11 @@ export function Component(): JSX.Element {
                     aria-hidden="true"
                     aria-label="Chat logo"
                 />
-                <Image src="/eth_logo.png" />
-                <h1 className={styles.askTitle}>Ask ETHEL</h1>
+                <h1 className={styles.askTitle}>Assisted Grading</h1>
+
                 <div className={styles.askQuestionInput}>
                     <QuestionInput
-                        placeholder="Example: Who are you, and what can you help me with?"
+                        placeholder="Example: Can you provide me grading feedback on my this assignment?"
                         disabled={isLoading}
                         initQuestion={question}
                         onSend={question => makeApiRequest(question)}

@@ -4,13 +4,13 @@ import styles from "./Example.module.css";
 
 const DEFAULT_EXAMPLES: string[] = [
     "What is this lecture all about? Give me the key topics",
-    "What explai the key diagrams to me",
+    "Explain the key diagrams to me in simple language. Provide page numbers.",
     "What is particularly relevant for the exam?"
 ];
 
 const GPT4V_EXAMPLES: string[] = [
     "What is this lecture all about? Give me the key topics",
-    "What explai the key diagrams to me",
+    "Explain the key diagrams to me in simple language. Provide page numbers.",
     "What is particularly relevant for the exam?"
 ];
 
