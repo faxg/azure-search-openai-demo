@@ -14,6 +14,11 @@ class ChatApproach(Approach, ABC):
         {"role": "assistant", "content": "Summarize Cryptocurrency Market Dynamics from last year"},
         {"role": "user", "content": "What are my health plans?"},
         {"role": "assistant", "content": "Show available health plans"},
+        {"role": "user", "content": "What lectures do I need to take for undergraduate courses"},
+        {"role": "assistant", "content": "Show required undergraduate courses"},
+        {"role": "user", "content": "How can I reach Dr. Kortemeyer?"},
+        {"role": "assistant", "content": "Find contact information for Dr. Kortemeyer"},
+
     ]
     NO_RESPONSE = "0"
 

@@ -1,6 +1,6 @@
 import { useRef, useState, useEffect, useContext } from "react";
-import { Checkbox, Panel, DefaultButton, TextField, ITextFieldProps, ICheckboxProps } from "@fluentui/react";
-import { SparkleFilled } from "@fluentui/react-icons";
+import { Checkbox, Panel, DefaultButton, TextField, ITextFieldProps, ICheckboxProps, Image } from "@fluentui/react";
+import { HatGraduationSparkle28Filled, SparkleFilled } from "@fluentui/react-icons";
 import { useId } from "@fluentui/react-hooks";
 import readNDJSONStream from "ndjson-readablestream";
 
@@ -349,9 +349,19 @@ const Chat = () => {
                 <div className={styles.chatContainer}>
                     {!lastQuestionRef.current ? (
                         <div className={styles.chatEmptyState}>
-                            <SparkleFilled fontSize={"120px"} primaryFill={"rgba(115, 118, 225, 1)"} aria-hidden="true" aria-label="Chat logo" />
-                            <h1 className={styles.chatEmptyStateTitle}>Chat with your data</h1>
-                            <h2 className={styles.chatEmptyStateSubtitle}>Ask anything or try an example</h2>
+                            <HatGraduationSparkle28Filled
+                                scale="4"
+                                height={"64px"}
+                                width={"64px"}
+                                fontSize={"120px"}
+                                primaryFill={"rgba(115, 118, 225, 1)"}
+                                aria-hidden="true"
+                                aria-label="Chat logo"
+                            />
+                            <Image src="/eth_logo.png" />
+                            <h1 className={styles.chatEmptyStateTitle}>Chat with your Lecture</h1>
+                            <h2 className={styles.chatEmptyStateSubtitle}>Ask me anything about this lecture, or try an example. </h2>
+                            <span>Keep in mind that I'm just an AI, so I make mistakes sometimes.</span>
                             <ExampleList onExampleClicked={onExampleClicked} useGPT4V={useGPT4V} />
                         </div>
                     ) : (
@@ -423,7 +433,7 @@ const Chat = () => {
                     <div className={styles.chatInput}>
                         <QuestionInput
                             clearOnSend
-                            placeholder="Type a new question (e.g. does my plan cover annual eye exams?)"
+                            placeholder="Type a new question (e.g. what are the key takeaways from this lecture?)"
                             disabled={isLoading}
                             onSend={question => makeApiRequest(question)}
                             showSpeechInput={showSpeechInput}

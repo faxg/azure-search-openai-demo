@@ -1,5 +1,5 @@
 import { useContext, useEffect, useRef, useState } from "react";
-import { Checkbox, Panel, DefaultButton, Spinner, TextField, ICheckboxProps, ITextFieldProps } from "@fluentui/react";
+import { Checkbox, Panel, DefaultButton, Spinner, TextField, ICheckboxProps, ITextFieldProps, Image } from "@fluentui/react";
 import { useId } from "@fluentui/react-hooks";
 
 import styles from "./Ask.module.css";
@@ -20,6 +20,7 @@ import { UploadFile } from "../../components/UploadFile";
 import { useMsal } from "@azure/msal-react";
 import { TokenClaimsDisplay } from "../../components/TokenClaimsDisplay";
 import { LoginContext } from "../../loginContext";
+import { HatGraduationSparkle28Filled, NotepadSparkle28Filled } from "@fluentui/react-icons";
 
 export function Component(): JSX.Element {
     const [isConfigPanelOpen, setIsConfigPanelOpen] = useState(false);
@@ -238,10 +239,20 @@ export function Component(): JSX.Element {
                     {showUserUpload && <UploadFile className={styles.commandButton} disabled={loggedIn} />}
                     <SettingsButton className={styles.commandButton} onClick={() => setIsConfigPanelOpen(!isConfigPanelOpen)} />
                 </div>
-                <h1 className={styles.askTitle}>Ask your data</h1>
+                <NotepadSparkle28Filled
+                    scale="4"
+                    height={"64px"}
+                    width={"64px"}
+                    fontSize={"120px"}
+                    primaryFill={"rgba(115, 118, 225, 1)"}
+                    aria-hidden="true"
+                    aria-label="Chat logo"
+                />
+                <Image src="/eth_logo.png" />
+                <h1 className={styles.askTitle}>Ask ETHEL</h1>
                 <div className={styles.askQuestionInput}>
                     <QuestionInput
-                        placeholder="Example: Does my plan cover annual eye exams?"
+                        placeholder="Example: Who are you, and what can you help me with?"
                         disabled={isLoading}
                         initQuestion={question}
                         onSend={question => makeApiRequest(question)}

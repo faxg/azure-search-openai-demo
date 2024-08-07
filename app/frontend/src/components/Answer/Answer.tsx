@@ -40,7 +40,11 @@ export const Answer = ({
     const messageContent = answer.message.content;
     const parsedAnswer = useMemo(() => parseAnswerToHtml(messageContent, isStreaming, onCitationClicked), [answer]);
 
-    const sanitizedAnswerHtml = DOMPurify.sanitize(parsedAnswer.answerHtml);
+    let sanitizedAnswerHtml = DOMPurify.sanitize(parsedAnswer.answerHtml);
+
+    // FIXME: do proper MARKDOWN support here?
+    // Use regex to replace **(.+)** with <b>\1</b>
+    sanitizedAnswerHtml = sanitizedAnswerHtml.replace(/\*\*(.+?)\*\*/g, "<b>$1</b>");
 
     return (
         <Stack className={`${styles.answerContainer} ${isSelected && styles.selected}`} verticalAlign="space-between">
